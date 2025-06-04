@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import 'nav-link.css';
+/* GLOBAL */
+:root {
+    --color-primary: #3D3D3D;
+    --background-primary: #D6C29C;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+
+/* LANDING */
+.landing-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    min-height: 75vh;
+    background-color: var(--background-primary);
+}
+.landing-main .background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    background-image: url('/assets/img/header-background.webp');
+    background-size: cover;
+    height: 100%;
+    width: 65vw;
+    z-index: -1;
+}
+/* HEADER */
+nav {
+    z-index: 1;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    width: 100%;
+    max-width: 1200px;
+}
+nav .branding img {
+    height: 65px;
+}
+.nav-item-container {
+    display: flex;
+    
+}
+.nav-item-container .nav-item {
+    display: inline;
+}
+.nav-item-container .nav-link {
+    color: unset;
+    text-decoration: none;
+}
