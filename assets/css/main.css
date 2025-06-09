@@ -344,4 +344,92 @@ nav .branding img {
   }
 }
 
+/* ZKUŠENOSTI */
+
+
+.zkusenosti-div {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.zkusenosti-title {
+    text-align: left;
+    font-weight: 600;
+    margin-bottom: 40px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 40px;
+    line-height: 45px;
+    letter-spacing: 0.03em;
+    color: var(--color-primary);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.grid-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.grid-item-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.grid-item-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(61, 61, 61, 0.1);
+}
+
+.grid-item-header img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.grid-item-header h3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+.grid-item-content p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--color-primary);
+    margin: 0;
+    max-width: 425px;
+    display: inline-block;
+    margin:  0 0 0 10px;
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .zkusenosti-title {
+        font-size: 30px;
+    }
+
+    .grid-item {
+        text-align: left;
+    }
+
+    .grid-item-header h3 {
+      margin: 0px;
+    }
+}
 
