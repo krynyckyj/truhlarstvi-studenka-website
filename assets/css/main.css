@@ -433,3 +433,214 @@ nav .branding img {
     }
 }
 
+/* GALLERIE*/
+.gallery img {
+    width: 100%;
+    height: 236px;
+    object-fit: cover;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    display: block;
+    position: relative;
+}
+
+.gallery img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto;
+    position: relative;
+    padding: 0 20px;
+}
+
+.gallery-button {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  background-color: #ae873b;
+  color: #fff;
+  width: 203px;
+  height: 40px;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+  transition: background-color 0.2s;
+}
+
+.gallery-button:hover {
+  background-color: #3d3d3d;
+}
+
+@media (max-width: 1024px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);  
+        gap: 8px; 
+        padding: 0 15px;
+    }
+
+    .gallery img {
+        height: 140px; 
+        width: 100%;
+        object-fit: cover;
+    }
+
+   
+    .gallery img:nth-child(n+5) {
+        display: none; 
+    }
+
+    .gallery-button {
+        margin: 30px auto;
+        width: 280px;
+        font-size: 16px;
+    }
+}
+
+.square2 {
+  width: 480px;         
+  height: 550px;        
+  background-color: #fff; 
+  border: 2px solid var(--color-secondary); 
+  position: absolute;
+  left: 57%;
+  top: 159%;
+  z-index: -1;
+}
+
+@media (max-width: 1448px) {
+  .square2 {
+    display: none;
+  }
+}
+
+
+ /*SLIDER*/
+
+ .kitchen-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+.kitchen-content {
+    display: flex;
+    gap: 60px;
+}
+
+.kitchen-text {
+    flex: 0 0 300px;
+}
+
+.kitchen-text h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+.slider-container {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 30px; /* Space for progress bar */
+}
+
+
+.slider-wrapper {
+    overflow: hidden;
+    margin-bottom: 20px; /* Space between slider and progress bar */
+}
+
+.slider {
+    display: flex;
+    scroll-snap-align: start;
+    gap: 20px;
+}
+
+.slider img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    scroll-snap-align: start;
+}
+
+.slider-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgba(61, 61, 61, 0.1);
+    border-radius: 1px;
+    cursor: pointer; /* Add cursor style */
+}
+
+.progress-bar {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 33.33%; /* Width for 3 visible slides */
+    background-color: var(--color-secondary);
+    border-radius: 1px;
+    transition: transform 0.3s ease;
+}
+
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: rgba(61, 61, 61, 0.3); /* Semi-transparent background */
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+
+.slider-nav:hover {
+    background: var(--color-secondary); /* Hover color */
+}
+
+.slider-nav.next {
+    right: 0;
+}
+
+/* Ensure progress bar stays visible on mobile */
+@media (max-width: 768px) {
+    .slider-container {
+        padding-bottom: 30px;
+    }
+    
+    .progress-bar {
+        width: 50%; /* Adjust width for mobile view */
+    }
+}
