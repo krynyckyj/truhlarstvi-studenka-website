@@ -1,149 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Truhlářství Jiří Šrubař</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"
-    />
-  </head>
-
-  <body>
-    <header>
-      <!-- nav + hlavní vizuál = logo, velký napdpis, popisek, velký banner -->
-      <div class="pozadi-container">
-        <img
-          src="assets/img/header fotka background.webp"
-          alt="Truhlářství Jiří Šrubař - pozadí"
-          class="pozadi"
-        />
-        <div class="obdelnik"></div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jiří Šrubař</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/fancybox.css">
+</head>
+<body>
+    <div class="page">
+        <div class="landing-main">
+            <div class="background"></div>
+            <nav>
+                <a href="/"><div class="branding">
+                    <img src="/assets/img/logo.png" alt="logo" />
+                </div></a>
+                <ul class="nav-item-container">
+                    <!--<a href="" class="nav-link"><li class="nav-item">HOME</li></a>-->
+                    <a href="/gallery.html" class="nav-link"><li class="nav-item">GALERIE</li></a>
+                    <a href="#contact" class="nav-link"><li class="nav-item">KONTAKT</li></a>
+                </ul>
+                <div class="hamburger" id="hamburger">&#9776;</div>
+            </nav>     
+            <div class="front"> 
+              <div class="square"></div>
+                <div class="front-text">
+                    <h1>Truhlářství Studénka <br/> <span class="highlight">Jiří Šrubař</span></h1>
+                    <p>Výroba kuchyňských linek, vestavěného nábytku a prodej domácích spotřebičů s více než 20letou zkušeností.</p>
+                </div>
+                 <div class="front-image">
+                    <img src="/assets/img/header.webp" alt="Jiří Šrubař" />
+                 </div>
+            </div>
+    </div>
+             <!-- FULLSCREEN mobilní menu mimo nav -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="menu-header">
+      <div class="close-btn" id="closeMenu">&times;</div>
+    </div>
+    <ul class="mobile-nav">
+      <div class="menu-logo">
+        <img src="/assets/img/logo-mobile.png" alt="logo" />
       </div>
-
-      <div class="overlay">
-        <nav>
-          <!-- odkazy na sekce: Galerie a Kontakt -->
-          <img
-            src="assets/img/logo.png"
-            alt="Logo Truhlářství Jiří Šrubař"
-            class="logo"
-          />
-          <ul>
-            <li><a href="/photos.html" class="nav-link">GALERIE</a></li>
-            <li><a href="#kontakt" class="nav-link">KONTAKT</a></li>
-          </ul>
-        </nav>
-
-        <div class="ctverec"></div>
-
-        <div class="hero">
-          <div class="hero-text">
-            <h1>
-              Truhlářství Studénka <br />
-              <span>Jiří Šrubař</span>
-            </h1>
-            <p>
-              Výroba kuchyňských linek, vestavěného nábytku a prodej <br />
-              domácích spotřebičů s více než 20letou zkušeností.
-            </p>
-          </div>
-          <img
-            src="assets/img/kuchyn.webp"
-            alt="Popředí Truhlářství Jiří Šrubař"
-            class="popredi"
-          />
+      <a href="" class="nav-link-mobile"><li class="nav-item-mobile">HLAVNÍ STRÁNKA</li></a>
+      <a href="" class="nav-link-mobile"><li class="nav-item-mobile">GALERIE</li></a>
+      <a href="" class="nav-link-mobile"><li class="nav-item-mobile">KONTAKT</li></a>
+    </ul>
+  </div>
         </div>
+             <!--- ZKUŠENOSTI Grid-->
+    <div class="zkusenosti-div">
+    <h2 class="zkusenosti-title">Zkušenosti, kvalita<br>a komplexní přístup</h2>
+    <div class="grid-container">
+        <div class="grid-item">
+            <div class="grid-item-content">
+                <div class="grid-item-header">
+                    <img src="assets/icons/quality.svg" alt="Kvalita">
+                    <h3>Nakupuji, používám a dodávám kvalitu.</h3>
+                </div>
+                <p>Pracuji s kvalitními materiály, mj. od českých dodavatelů. Nepoužívám materiály z máslého nmlací. I proto je životnost našich kuchyní v řádech několika desítek let.</p>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <div class="grid-item-content">
+                <div class="grid-item-header">
+                    <img src="assets/icons/tools.svg" alt="Praktičnost">
+                    <h3>Kuchyně s co nejvyšší praktičností.</h3>
+                </div>
+                <p>Po desítkách let zkušeností a denního pohybu v kuchyni vím, co kam umístit a jaké materiály použít tak, aby kuchyně sloužila co nejlépe a nejdéle.</p>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <div class="grid-item-content">
+                <div class="grid-item-header">
+                    <img src="assets/icons/bookmark.svg" alt="Přizpůsobení">
+                    <h3>Přizpůsobení se vašim potřebám.</h3>
+                </div>
+                <p>Zákazníkovi jsem schopen splnit nejrůzličnější požadavky, včetně výšky pracovní desky. K maximálnímu užití kuchyně s interiérem nabízím také možnost údržby vestavěného nábytku se stejném materiálu, jako např. jídelní stoly, obývací stěny apod.</p>
+            </div>
+        </div>
+        
+        <div class="grid-item">
+            <div class="grid-item-content">
+                <div class="grid-item-header">
+                    <img src="assets/icons/pricetag.svg" alt="Ceny">
+                    <h3>Spotřebiče za internetové ceny.</h3>
+                </div>
+                <p>Díky dlouholetým vztahům s dodavateli dokážeme cenově konkurovat i internetovým obchodům. Samozřejmostí je také odborná montáž spotřebičů.</p>
+            </div>
+        </div>
+    </div>
+    </div>
+        
+    <div class="gallery-container">
+       <div class="square2"></div>
+      <div class="gallery" data-limit="8"></div>
+        <a href="/gallery.html" class="gallery-button">ZOBRAZIT VÍCE</a>
+        </div>
+    </div>
+
+  <div class="assist-container">
+    <div class="assist-exact">
+    <h2>Prodej domácích spotřebičů a vybavení kuchyní</h2>
+      <img src="assets/img/assist photos .png"/>
       </div>
-    </header>
+      <p>a dalších</p>
+  </div>
 
-    <main>
-      <section class="benefits-section">
-        <div class="header-container">
-          <span class="decorative-line"></span>
-          <h2>Zkušenosti, kvalita<br />a komplexní přístup</h2>
-        </div>
+    <div class="contacts" id="contact">
+     <div class="kontakt">
+      <h2>Kontakt</h2>
+         <div class="kontakt-flex">
+        <p>JIŘÍ ŠRUBAŘ<br>ŠÁRKA ŠRUBAŘOVÁ</p>
+        <p>
+            <span class="icon">📞</span> 777 849 081<br>
+            <span class="icon">📞</span> 777 308 069
+        </p>
+         </div>
+          <div class="kontakt-flex">
+        <p>
+            Po - Pá: 8:00 - 16:30<br>
+            Družstevní 227<br>
+            742 13 Studénka
+        </p>
+        <p>
+            IČ: 41051106<br>
+            DIČ: CZ6705240454<br>
+            číslo b. účtu: 123456789
+        </p>
+         </div>
+    </div>
+    <div class="map">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2563.123456789!2d18.0123456789!3d49.123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47123456789abcdef%3A0x123456789abcdef!2sStud%C3%A9nka!5e0!3m2!1sen!2scz!4v1234567890" 
+            width="100%" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+    </div>
+</div>
 
-        <div class="benefits-grid">
-          <div class="benefit-item">
-            <div class="benefit-title">
-              <img src="assets/icons/quality.svg" alt="" />
-              <h3>Nakupuji, používám a dodávám kvalitu.</h3>
-            </div>
-            <div class="divider"></div>
-            <p>
-              Pracuji s kvalitními materiály, mj. od českých dodavatelů.
-              Nepoužívám materiály s nástřiky imitací. I proto je životnost
-              našich kuchyní v řádech několika desítek let.
-            </p>
-          </div>
+   
+  <footer><h3>Copyright 2025 @ Maxim Krynyckyj</h3></footer>
 
-          <div class="benefit-item">
-            <div class="benefit-title">
-              <img src="assets/icons/tools.svg" alt="" />
-              <h3>Kuchyně s co nejvyšší praktičností.</h3>
-            </div>
-            <div class="divider"></div>
-            <p>
-              Po desítkách let zkušeností a z denního pohybu v kuchyni víme, co
-              kam umístit a jaké materiály použít tak, aby kuchyně sloužila co
-              nejlépe a nejdéle.
-            </p>
-          </div>
-
-          <div class="benefit-item">
-            <div class="benefit-title">
-              <img src="assets/icons/bookmark.svg" alt="" />
-              <h3>Přizpůsobení se vašim potřebám.</h3>
-            </div>
-            <div class="divider"></div>
-            <p>
-              Zákazníkovi jsem schopen splnit nejatypičtější požadavky, včetně
-              výšky pracovní desky.<br /><br />
-              K maximálnímu sladění kuchyně s interiérem nabízím také možnost
-              dalšího vestavěného nábytku ve stejném materiálu, jako např.
-              jídelní stoly, obývací stěny apod.
-            </p>
-          </div>
-
-          <div class="benefit-item">
-            <div class="benefit-title">
-              <img src="assets/icons/1price tag_pricing.svg" alt="" />
-              <h3>Spotřebiče za internetové ceny.</h3>
-            </div>
-            <div class="divider"></div>
-            <p>
-              Díky dlouholetým vztahům s dodavateli dokážeme cenově konkurovat i
-              internetovým obchodům.<br /><br />
-              Samozřejmostí je také odborná montáž spotřebičů.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="assets/img/photos">
-        <!-- GALERIE: mřížka obrázků + případně lightbox -->
-        <div class="ctverec-bilozlaty"></div>
-        <div class="gallery" data-limit="8"></div>
-        <a href="assets/img/photos.html" class="gallery-button">ZOBRAZIT VÍCE</a>
-      </section>
-
-      <section id="projekty">
-        <!-- PROJEKTY: karty s detailem realizací -->
-      </section>
-
-      <section id="kontakt">
-        <!-- KONTAKT: textové údaje + mapa -->
-      </section>
-    </main>
-
-    <footer>
-      <!-- PATIČKA: autorská práva -->
-    </footer>
-
-    <script src="assets/js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
-  </body>
-</html>
+    <script src="/assets/js/hamburger-menu/menu.js"></script>
+    <script src="/assets/js/assist-slider/assist-slider.js" defer></script>
+    <script src="/assets/js/slider/slider.js" defer></script>
+    <script src="/assets/js/fancybox/fancybox.umd.js" defer></script>
+    <script src="/assets/js/fancybox-custom/fancybox-loader.js" defer></script>
+</body>
+</html> 
