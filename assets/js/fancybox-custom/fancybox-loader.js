@@ -1,24 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
   const gallery = document.querySelector(".gallery");
-
-  // Získáme všechny odkazy
-  const items = Array.from(gallery.querySelectorAll("a"));
-
-  // Seřadíme sestupně podle čísla ve jménu obrázku (foto99 > foto1)
-  items.sort((a, b) => {
-    const numA = parseInt(a.getAttribute("href").match(/\d+/));
-    const numB = parseInt(b.getAttribute("href").match(/\d+/));
-    return numB - numA; // sestupně
-  });
-
-  // Vyčistíme galerii a vložíme prvky znovu ve správném pořadí
-  gallery.innerHTML = "";
-  items.forEach(el => gallery.appendChild(el));
-});
-
-
-document.addEventListener("DOMContentLoaded", function () {
-  const gallery = document.querySelector(".gallery");
   if (!gallery) return;
 
   const totalImages = 91;
@@ -26,11 +7,16 @@ document.addEventListener("DOMContentLoaded", function () {
   const prefix = "0";
   const ext = ".webp";
 
-  // Zjisti limit z atributu nebo nastav 'all'
-  const limitAttr = gallery.getAttribute("data-limit");
-  const showOnly = limitAttr === "all" ? totalImages : parseInt(limitAttr);
+  // Zjisti šířku okna
+  const isMobile = window.innerWidth <= 768;
 
-  for (let i = totalImages; i > totalImages - showOnly; i--) {
+  // Přečti limit z atributu, jinak použij výchozí hodnotu
+  const limitAttr = gallery.getAttribute("data-limit");
+  const defaultLimit = limitAttr === "all" ? totalImages : parseInt(limitAttr);
+  const limit = isMobile ? 4 : defaultLimit;
+
+  // Načti obrázky
+  for (let i = totalImages; i > totalImages - limit; i--) {
     const path = folder + prefix + i + ext;
 
     const a = document.createElement("a");
@@ -45,9 +31,12 @@ document.addEventListener("DOMContentLoaded", function () {
     a.appendChild(img);
     gallery.appendChild(a);
   }
-});
 
-Fancybox.bind('[data-fancybox="gallery"]', {
-  animated: true,
-  animationEffect: "fade",
+  // Spusť Fancybox, pokud je dostupný
+  if (typeof Fancybox !== "undefined") {
+    Fancybox.bind('[data-fancybox="gallery"]', {
+      animated: true,
+      animationEffect: "fade",
+    });
+  }
 });
