@@ -535,112 +535,259 @@ nav .branding img {
 }
 
 
- /*SLIDER*/
+/* ASSIST */
 
- .kitchen-section {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 80px 20px;
+.assist-container {
+      margin: 150px;
 }
 
-.kitchen-content {
-    display: flex;
-    gap: 60px;
+.assist-exact {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 }
 
-.kitchen-text {
-    flex: 0 0 300px;
-}
-
-.kitchen-text h2 {
+.assist-container h2 {
     font-family: 'Raleway', sans-serif;
     font-size: 40px;
     font-weight: 600;
+    letter-spacing: 0.03em;
     color: var(--color-primary);
-    margin-bottom: 30px;
-    line-height: 1.2;
 }
 
-.slider-container {
-    flex: 1;
-    position: relative;
-    overflow: hidden;
-    padding-bottom: 30px; /* Space for progress bar */
+.assist-container img {
+   height: 100%;
+   padding: 30px;
+   width: 1300px;
 }
 
-
-.slider-wrapper {
-    overflow: hidden;
-    margin-bottom: 20px; /* Space between slider and progress bar */
+.assist-container p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--color-primary);
+  margin-top: 10px;
+  letter-spacing: 0.04em;
+  text-align: right;
+  max-width: 1420px;
 }
 
-.slider {
-    display: flex;
-    scroll-snap-align: start;
-    gap: 20px;
-}
-
-.slider img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    scroll-snap-align: start;
-}
-
-.slider-progress {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: rgba(61, 61, 61, 0.1);
-    border-radius: 1px;
-    cursor: pointer; /* Add cursor style */
-}
-
-.progress-bar {
-    position: absolute;
-    left: 0;
-    height: 100%;
-    width: 33.33%; /* Width for 3 visible slides */
-    background-color: var(--color-secondary);
-    border-radius: 1px;
-    transition: transform 0.3s ease;
-}
-
-.slider-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 30px;
-    height: 30px;
-    border: none;
-    background: rgba(61, 61, 61, 0.3); /* Semi-transparent background */
-    color: #fff;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    font-size: 1.2em;
-    transition: background-color 0.3s ease;
-}
-
-.slider-nav:hover {
-    background: var(--color-secondary); /* Hover color */
-}
-
-.slider-nav.next {
-    right: 0;
-}
-
-/* Ensure progress bar stays visible on mobile */
 @media (max-width: 768px) {
-    .slider-container {
-        padding-bottom: 30px;
+    .assist-container {
+        margin: 40px 0;
+        
     }
+
+    .assist-container h2 {
+        font-size: 30px;
+        padding: 0 20px;
+    }
+
+    .assist-slider {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE/Edge */
+         scroll-behavior: smooth;
+        gap: 0; 
+    }
+
+    .assist-slider::-webkit-scrollbar {
+        display: none; /* Chrome/Safari/Opera */
+    }
+
     
-    .progress-bar {
-        width: 50%; /* Adjust width for mobile view */
+    .assist-exact img {
+      width: 350px;
+      height: 20vh;
+       flex: 0 0 100%;
+        scroll-snap-align: start;
+        padding: 10px;
+         transition: opacity 0.3s ease;
+    }
+    .assist-container p {
+        font-size: 14px;
+        padding: 0 20px;
+        text-align: center;
     }
 }
+
+/*CONTACTS*/
+.contacts {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #d6c29c;
+  padding: 0px 180px;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.kontakt {
+  flex: 1 1 320px;
+  font-family: 'Open Sans', sans-serif;
+  color: var(--color-primary);
+  line-height: 1.6;
+  min-width: 260px;
+  max-width: 500px;
+  box-sizing: border-box;
+}
+
+.kontakt h2 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 20px;
+  position: relative;
+  text-align: left;
+
+}
+
+.kontakt-flex {
+  display: flex;
+  align-items: center;
+  gap: 5vw;
+  flex-wrap: wrap;
+}
+
+.kontakt p {
+  margin-bottom: 15px;
+  font-size: 16px;
+  word-break: break-word;
+}
+
+.kontakt .icon {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.map {
+  flex: 1 1 320px;
+  max-width: 600px;
+  min-width: 260px;
+  height: 450px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1200px) {
+  .contacts {
+    padding: 0px 40px;
+  }
+  .map {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .contacts {
+    padding: 0px 10px;
+    gap: 15px;
+  }
+  .kontakt, .map {
+    min-width: 0;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .contacts {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    padding: 0 5vw;
+  }
+  .kontakt, .map {
+    width: 100%;
+    max-width: 100%;
+  }
+  .map {
+    height: 250px;
+  }
+  .kontakt-flex {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .contacts {
+    padding: 0 2vw;
+    gap: 10px;
+  }
+  .kontakt h2 {
+    font-size: 22px;
+  }
+  .kontakt p {
+    font-size: 14px;
+  }
+  .map {
+    height: 180px;
+  }
+}
+
+
+
+/*FOOTER*/
+footer {
+  width: 99.2vw;
+  margin: 0px;
+  background-color: var(--color-primary);
+  overflow-x: hidden;
+}
+
+footer h3 {
+ display: flex;
+ justify-content: center;
+ color: #fff;
+ font-family: "Open Sans", sans-serif;
+ font-size: 16px;
+ font-weight: 400;
+ letter-spacing: 0.04em;
+}
+
+@media (max-width: 768px) {
+  footer {
+    width: 100vw;
+  }
+}
+
+.gallery {
+  
+  top: 0;
+  z-index: 999;
+}
+
+.gallery-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    min-height: 85vh;
+    background-color: var(--background-primary);
+    margin-bottom: -35%;
+}
+
+.galeriis {
+   position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    background-image: url('/assets/img/header-background.webp');
+    background-size: cover;
+    height: 100%;
+    width: 65vw;
+    z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .gallery-main {
+     margin-bottom: -155%;
+    }
+  }
