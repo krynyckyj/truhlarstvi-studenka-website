@@ -1,4 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
+  fancyboxLoader();
+});
+document.addEventListener("resize", function () {
+  fancyboxLoader();
+});
+
+function fancyboxLoader() {
   const gallery = document.querySelector(".gallery");
   if (!gallery) return;
 
@@ -11,7 +18,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const isMobile = window.innerWidth <= 768;
 
   // Přečti limit z atributu, jinak použij výchozí hodnotu
-  const limitAttr = gallery.getAttribute("data-limit");
+  let limitAttr = gallery.getAttribute("data-limit") || 8;
+  const limitAttrMobile = gallery.getAttribute("data-limit-mobile") || 4;
+
+  if(isMobile) {
+    limitAttr = limitAttrMobile;
+  }
+
   const defaultLimit = limitAttr === "all" ? totalImages : parseInt(limitAttr);
   const limit = isMobile ? 4 : defaultLimit;
 
@@ -39,4 +52,4 @@ document.addEventListener("DOMContentLoaded", function () {
       animationEffect: "fade",
     });
   }
-});
+}
