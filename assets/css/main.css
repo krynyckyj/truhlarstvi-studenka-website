@@ -530,8 +530,9 @@ nav .branding img {
   background-color: #fff;
   border: 2px solid var(--color-secondary);
   position: absolute;
-
-  z-index: 1;
+  left: 57%;
+  top: 159%;
+  z-index: -1;
 }
 
 @media (max-width: 1448px) {
