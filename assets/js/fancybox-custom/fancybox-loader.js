@@ -1,9 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   fancyboxLoader();
 });
-document.addEventListener("resize", function () {
-  fancyboxLoader();
-});
 
 function fancyboxLoader() {
   const gallery = document.querySelector(".gallery");
@@ -14,21 +11,24 @@ function fancyboxLoader() {
   const prefix = "0";
   const ext = ".webp";
 
-  // Zjisti šířku okna
+  // Clear existing images
+  gallery.innerHTML = '';
+
+  // Check if we're on gallery.html or index.html
+  const isGalleryPage = window.location.pathname.includes('gallery.html');
   const isMobile = window.innerWidth <= 768;
 
-  // Přečti limit z atributu, jinak použij výchozí hodnotu
-  let limitAttr = gallery.getAttribute("data-limit") || 8;
-  const limitAttrMobile = gallery.getAttribute("data-limit-mobile") || 4;
-
-  if(isMobile) {
-    limitAttr = limitAttrMobile;
+  // Determine the limit based on the page and device
+  let limit;
+  if (isGalleryPage) {
+    // On gallery.html, show all images regardless of device
+    limit = totalImages;
+  } else {
+    // On index.html, show 4 on mobile, 8 on desktop
+    limit = isMobile ? 4 : 8;
   }
 
-  const defaultLimit = limitAttr === "all" ? totalImages : parseInt(limitAttr);
-  const limit = isMobile ? 4 : defaultLimit;
-
-  // Načti obrázky
+  // Load images
   for (let i = totalImages; i > totalImages - limit; i--) {
     const path = folder + prefix + i + ext;
 
@@ -45,11 +45,16 @@ function fancyboxLoader() {
     gallery.appendChild(a);
   }
 
-  // Spusť Fancybox, pokud je dostupný
+  // Initialize Fancybox if available
   if (typeof Fancybox !== "undefined") {
     Fancybox.bind('[data-fancybox="gallery"]', {
       animated: true,
       animationEffect: "fade",
     });
   }
+}
+
+// Add resize listener only for index.html
+if (!window.location.pathname.includes('gallery.html')) {
+  window.addEventListener("resize", fancyboxLoader);
 }
