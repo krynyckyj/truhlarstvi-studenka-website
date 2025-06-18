@@ -99,12 +99,12 @@ background-color: var(--color-secondary);
 }
 
 .square {
-  width: 30px;
+  width: 80px;
   height: 450px;
   background-color: var(--background-primary);
   z-index: 1;
   position: absolute;
-  left: 1330px;
+  left: 1280px;
   top: 20px;
   border: 2px solid var(--color-secondary);
 }
