@@ -16,20 +16,48 @@ body {
 html {
   scroll-behavior: smooth;
 }
-
-/* lajna vedle textu (test)
-.line {
-width: 92px;
-height: 2px;
-background-color: var(--color-secondary);
-}
-
+ 
+/* LINE */
 .line-header {
   display: flex;
   align-items: center;
-  margin: 0 0px;
+  gap: 0.8em; 
 }
-  */
+
+.line {
+  width: 90px;
+  height: 2px;
+  background-color: var(--color-secondary);
+}
+
+@media (max-width: 600px) {
+  .line {
+    display: none;
+  }
+}
+
+/* LINE - ON MOBILE */
+h2::after {
+  content: "";
+  display: none;
+  width: 92px;
+  height: 2px;
+  background-color: var(--color-secondary);
+  margin-top: 8px;
+}
+
+
+@media (max-width: 600px) {
+  h2::after {
+    display: block; 
+    margin-top: 20px; 
+    width: 92px;     
+  }
+
+  h2 {
+    margin-bottom: 0px;
+  }
+}
 
 /* LANDING */
 .landing-main {
@@ -65,6 +93,7 @@ background-color: var(--color-secondary);
 
 .front-text {
   margin: 0px 115px;
+  margin-bottom: 20px
 }
 
 .front-text h1 {
