@@ -385,13 +385,16 @@ nav .branding img {
 /* ZKUŠENOSTI */
 
 .zkusenosti-div {
-  padding: 80px 20px;
+  padding: 50px 20px;
   max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
 }
 
 .zkusenosti-title {
-  text-align: left;
+  align-items: start;
   font-weight: 600;
   margin-bottom: 40px;
   font-family: "Raleway", sans-serif;
@@ -399,12 +402,16 @@ nav .branding img {
   line-height: 45px;
   letter-spacing: 0.03em;
   color: var(--color-primary);
+  text-align: left;
+  margin-right: 650px; 
+  max-width: 800px;  
 }
 
 .grid-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
+  gap: 100px;
+  justify-content: center; 
 }
 
 .grid-item {
@@ -455,10 +462,14 @@ nav .branding img {
 @media (max-width: 768px) {
   .grid-container {
     grid-template-columns: 1fr;
+    gap: 60px;
   }
 
   .zkusenosti-title {
     font-size: 30px;
+    line-height: 35px; 
+    margin-right: 0;
+    text-align: left; 
   }
 
   .grid-item {
@@ -467,6 +478,10 @@ nav .branding img {
 
   .grid-item-header h3 {
     margin: 0px;
+  }
+
+  .zkusenosti-div {
+    align-items: flex-start; 
   }
 }
 
