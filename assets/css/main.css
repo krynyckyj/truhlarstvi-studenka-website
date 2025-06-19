@@ -650,7 +650,7 @@ nav .branding img {
 .logo-slider {
   display: flex;
   width: max-content;
-  animation: slide-logos 20s linear infinite;
+  animation: slide-logos 30s linear infinite;
   gap: 30px;
 }
 
@@ -685,7 +685,7 @@ nav .branding img {
   }
 
   .logo-slider {
-    animation-duration: 30s;
+    animation-duration: 25s;
   }
 }
 
