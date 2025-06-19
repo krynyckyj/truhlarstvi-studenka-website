@@ -14,10 +14,10 @@ body {
 }
 
 html {
-  scroll-behavior: smooth; 
+  scroll-behavior: smooth;
 }
 
-  /* lajna vedle textu (test)
+/* lajna vedle textu (test)
 .line {
 width: 92px;
 height: 2px;
@@ -543,7 +543,7 @@ nav .branding img {
 
 /* SLIDER */
 .slider-container {
-  overflow: hidden; 
+  overflow: hidden;
   max-width: 1300px;
   margin: 150px auto;
   padding: 20px 0;
@@ -584,7 +584,6 @@ nav .branding img {
   margin-bottom: 50px;
 }
 
-
 @media (max-width: 768px) {
   .slider-flex {
     flex-direction: column;
@@ -595,11 +594,11 @@ nav .branding img {
   }
 
   .slider-track {
-    overflow-x: auto; 
-    width: 100vw; 
+    overflow-x: auto;
+    width: 100vw;
     margin-left: calc(-50vw + 50%); /* Center the track */
     margin-right: calc(-50vw + 50%);
-    padding-left: 20px; 
+    padding-left: 20px;
     padding-right: 20px;
   }
 
@@ -610,9 +609,9 @@ nav .branding img {
   }
 
   .slider-item img {
-   width: 270px;
-   height: 290px;
-}
+    width: 270px;
+    height: 290px;
+  }
 }
 
 /* LOGO SLIDER */
@@ -622,6 +621,8 @@ nav .branding img {
   overflow: hidden;
   margin: 100px auto;
   padding: 10px 0px;
+  
+ 
 }
 
 .logo-slider-container h2 {
@@ -633,6 +634,17 @@ nav .branding img {
   line-height: 45px;
   color: var(--color-primary);
   margin-bottom: 50px;
+}
+
+.logo-slider-effect {
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
 }
 
 .logo-slider {
@@ -731,25 +743,21 @@ nav .branding img {
     gap: 30px;
   }
 
-  .kontakt-map, .kontakt-map iframe {
+  .kontakt-map,
+  .kontakt-map iframe {
     width: 100%;
     height: 300px;
   }
 }
 
-
-
-
-
-
 /*FOOTER*/
 
-footer { 
+footer {
   margin: 0px auto;
   background-color: var(--color-primary);
   color: #fff;
-  bottom: 0px;padding: 1px 0;
- 
+  bottom: 0px;
+  padding: 1px 0;
 }
 footer h3 {
   display: flex;
@@ -766,7 +774,6 @@ footer h3 {
     width: 100vw;
   }
 }
-
 
 /*gallery.hmtl*/
 .gallery {
@@ -801,6 +808,3 @@ footer h3 {
     margin-bottom: -155%;
   }
 }
-
-
-
