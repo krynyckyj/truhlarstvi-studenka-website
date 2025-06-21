@@ -634,7 +634,8 @@ nav .branding img {
   }
 
   .slider-container {
-    overflow: visible; /* Allow container to show all content */
+    overflow: visible; 
+    padding: 0px 0;
   }
 
   .slider-track {
@@ -655,6 +656,14 @@ nav .branding img {
   .slider-item img {
     width: 270px;
     height: 290px;
+  }
+
+  .slider-container h2 {
+    font-size: 30px;
+    line-height: 35px; 
+    margin-left: 20px;
+    text-align: left; 
+    margin-bottom: 20px;
   }
 }
 
@@ -730,6 +739,22 @@ nav .branding img {
 
   .logo-slider {
     animation-duration: 25s;
+  }
+
+  .logo-slider-container h2 {
+    font-size: 30px;
+    line-height: 35px; 
+    margin-left: 20px;
+    text-align: left; 
+    margin-bottom: 50px;
+  }
+
+  .logo-slider-container p {
+    display: none;
+  }
+
+  .logo-slider-container {
+  padding: 0px;
   }
 }
 
