@@ -213,7 +213,7 @@ h2::after {
   }
 }
 
-/* HEADER */
+/* NAV BAR */
 nav {
   z-index: 1;
   font-family: "Open Sans", sans-serif;
@@ -344,12 +344,25 @@ nav .branding img {
     display: block;
     position: relative;
     z-index: 10000;
-    font-size: 38px;
-    padding: 10px 20px;
+    font-size: 35px;
+    padding: 10px;
   }
+
+  nav .branding img {
+  height: 55px;
 }
 
-  /* --- MOBILE MENU HALF-SCREEN & BLUR OVERLAY --- */
+nav {
+  padding: 15px;
+}
+
+}
+
+.mobile-menu,
+.blur-overlay {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .mobile-menu {
     display: none;
