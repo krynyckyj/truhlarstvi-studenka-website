@@ -664,6 +664,14 @@ nav {
   padding-bottom: 10px; /* Add padding to show scrollbar */
 }
 
+.slider-track p {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 19px;
+  letter-spacing: 0.02em;
+  color: var(--color-primary);
+}
+
 .slider-text {
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
