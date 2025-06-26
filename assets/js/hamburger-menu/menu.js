@@ -16,3 +16,9 @@ function closeMenu() {
 hamburger.addEventListener('click', openMenu);
 closeBtn.addEventListener('click', closeMenu);
 blurOverlay.addEventListener('click', closeMenu);
+
+const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+
+mobileNavLinks.forEach(link => {
+  link.addEventListener('click', closeMenu);
+});
