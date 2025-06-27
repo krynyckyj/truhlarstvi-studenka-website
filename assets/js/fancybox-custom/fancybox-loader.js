@@ -6,8 +6,10 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function isGalleryPage() {
-  return window.location.pathname.includes('gallery.html');
+  const path = window.location.pathname;
+  return path.includes('/gallery') || path.includes('gallery.html');
 }
+
 
 function isMobile() {
   return window.innerWidth <= 768;
