@@ -1,6 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
   fancyboxLoader();
+  if (!isGalleryPage()) {
+    window.addEventListener("resize", debounce(fancyboxLoader, 300));
+  }
 });
+
+function isGalleryPage() {
+  return window.location.pathname.includes('gallery.html');
+}
+
+function isMobile() {
+  return window.innerWidth <= 768;
+}
 
 function fancyboxLoader() {
   const gallery = document.querySelector(".gallery");
@@ -11,24 +22,20 @@ function fancyboxLoader() {
   const prefix = "0";
   const ext = ".webp";
 
-  // Clear existing images
-  gallery.innerHTML = '';
-
-  // Check if we're on gallery.html or index.html
-  const isGalleryPage = window.location.pathname.includes('gallery.html');
-  const isMobile = window.innerWidth <= 768;
-
   // Determine the limit based on the page and device
   let limit;
-  if (isGalleryPage) {
-    // On gallery.html, show all images regardless of device
+  if (isGalleryPage()) {
     limit = totalImages;
   } else {
-    // On index.html, show 4 on mobile, 8 on desktop
-    limit = isMobile ? 4 : 8;
+    limit = isMobile() ? 4 : 8;
   }
 
-  // Load images
+  loadImages(gallery, totalImages, folder, prefix, ext, limit);
+}
+
+function loadImages(gallery, totalImages, folder, prefix, ext, limit) {
+  gallery.innerHTML = ''; // Clear existing images
+
   for (let i = totalImages; i > totalImages - limit; i--) {
     const path = folder + prefix + i + ext;
 
@@ -45,7 +52,7 @@ function fancyboxLoader() {
     gallery.appendChild(a);
   }
 
-  // Initialize Fancybox if available
+  // Initialize Fancybox
   if (typeof Fancybox !== "undefined") {
     Fancybox.bind('[data-fancybox="gallery"]', {
       animated: true,
@@ -54,7 +61,11 @@ function fancyboxLoader() {
   }
 }
 
-// Add resize listener only for index.html
-if (!window.location.pathname.includes('gallery.html')) {
-  window.addEventListener("resize", fancyboxLoader);
+// Debounce function to avoid too many reloads during resize
+function debounce(func, wait) {
+  let timeout;
+  return function () {
+    clearTimeout(timeout);
+    timeout = setTimeout(func, wait);
+  };
 }
