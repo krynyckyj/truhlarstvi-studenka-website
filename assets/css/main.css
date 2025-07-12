@@ -593,6 +593,7 @@ nav {
   line-height: 20px;
   letter-spacing: 0.05em;
   transition: background-color 0.2s;
+  cursor: pointer;
 }
 
 .gallery-button:hover {
@@ -935,8 +936,37 @@ nav {
   .contact-placeholder {
     display: none;
   }
+  
+  .contact-info {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0 8px;
+    box-sizing: border-box;
+  }
 }
 
+@media (max-width: 768px) {
+  .contact-content {
+    padding: 0 12px;
+    box-sizing: border-box;
+  }
+
+  .contact-content h2 {
+    font-size: 30px;
+    line-height: 35px; 
+    margin-left: 0;
+    text-align: left; 
+    margin-bottom: 20px;
+  }
+
+  .line-header {
+    margin-left: 0;
+    padding-left: 16px;      
+    box-sizing: border-box;
+  }
+    
+}
 @media (max-width: 600px) {
   .contact-info-cols,
   .contact-info-cols-second {
@@ -960,12 +990,21 @@ nav {
   }
 }
 
+@media screen and (max-width: 480px) {
+  .contact-info {
+    padding-left: 12px;
+  }
+}
+
+
 footer {
   margin: 0px auto;
   background-color: var(--color-primary);
   color: #fff;
+  border: none;
+  outline: none;
   bottom: 0px;
-  padding: 1px 0;
+  padding-bottom: 1px;
 }
 footer h3 {
   display: flex;
