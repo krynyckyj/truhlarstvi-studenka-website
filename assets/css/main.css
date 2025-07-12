@@ -649,6 +649,7 @@ nav {
 }
 
 /* SLIDER */
+
 .slider-container {
   overflow: hidden;
   max-width: 1300px;
@@ -660,14 +661,53 @@ nav {
   display: flex;
 }
 
+.slider-wrapper {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+}
+
 .slider-track {
   display: flex;
   gap: 10px;
-  width: max-content;
-  overflow-x: scroll;
+  overflow-x: auto;
   scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  padding-bottom: 10px; /* Add padding to show scrollbar */
+  scroll-behavior: smooth;
+  padding-bottom: 8px;
+
+  scrollbar-width: thin;
+  scrollbar-color: #aaa transparent;
+}
+
+.slider-track::-webkit-scrollbar {
+  height: 6px;
+}
+.slider-track::-webkit-scrollbar-track {
+  background: transparent;
+}
+.slider-track::-webkit-scrollbar-thumb {
+  background-color: #aaa;
+  border-radius: 10px;
+}
+
+.slider-arrow {
+  position: absolute;
+  top: 40%;
+  right: 10px;
+  transform: translateY(-50%);
+  background-color: var(--color-primary);
+  border: none;
+  font-size: 10px;
+  padding: 11px 17px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 30px;
+}
+
+.slider-arrow img {
+width: 10px;
+height: 20px;
+object-fit: contain;
 }
 
 .slider-track p {
@@ -966,7 +1006,7 @@ nav {
 
   .line-header {
     margin-left: 0;
-    padding-left: 16px;      
+    padding-left: 5px;      
     box-sizing: border-box;
   }
     
@@ -987,7 +1027,7 @@ nav {
 
 @media screen and (max-width: 480px) {
   .contact-info {
-    padding-left: 12px;
+    padding-left: 5px;
   }
 }
 
