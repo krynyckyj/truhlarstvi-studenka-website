@@ -923,6 +923,10 @@ nav {
   flex: 1;
 }
 
+.name {
+ padding-bottom: 10px ;
+}
+
 @media screen and (max-width: 980px) {
   .contact {
     flex-direction: column;
@@ -979,15 +983,6 @@ nav {
     font-size: 16px;
     gap: 4px;
   }
-  .contact-info-cols .col strong,
-  .contact-info-cols-second .col strong {
-    font-size: 16px;
-  }
-  .contact-info-cols .col .icon-phone {
-    width: 15px;
-    height: 15px;
-    margin-right: 5px;
-  }
 }
 
 @media screen and (max-width: 480px) {
@@ -996,6 +991,15 @@ nav {
   }
 }
 
+.col img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  vertical-align: middle;
+  display: inline-block;
+  object-fit: contain;
+  margin-bottom: 5px;
+}
 
 footer {
   margin: 0px auto;
