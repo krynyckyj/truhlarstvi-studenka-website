@@ -689,6 +689,11 @@ nav {
   border-radius: 10px;
 }
 
+.slider-item {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
 .slider-arrow {
   position: absolute;
   top: 40%;
@@ -751,11 +756,19 @@ object-fit: contain;
   .slider-track {
     overflow-x: auto;
     width: 100vw;
-    margin-left: calc(-50vw + 50%); /* Center the track */
-    margin-right: calc(-50vw + 50%);
+    margin-left: 0;
+    margin-right: 0;
     padding-left: 20px;
     padding-right: 20px;
+    padding-inline: 20px;
+    scroll-padding-left: 20px;
+    padding-inline: 20px;
   }
+
+  .slider-item {
+    flex: 0 0 auto;
+  }
+
 
   .slider-text {
     margin: 10px 20px;
