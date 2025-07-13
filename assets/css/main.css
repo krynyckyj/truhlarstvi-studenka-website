@@ -674,7 +674,6 @@ nav {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   padding-bottom: 8px;
-
   scrollbar-width: thin;
   scrollbar-color: #aaa transparent;
 }
