@@ -1,40 +1,37 @@
   document.addEventListener("DOMContentLoaded", function () {
-    const track = document.querySelector(".slider-track");
-    const arrow = document.querySelector(".slider-arrow");
+    const track = document.querySelector('.slider-track');
+    const arrow = document.querySelector('.slider-arrow');
+    const scrollAmount = 300;
 
-    arrow.addEventListener("click", () => {
+    // === Funkce pro kliknutí na šipku
+    arrow.addEventListener('click', () => {
+      const maxScrollLeft = track.scrollWidth - track.clientWidth;
+      const currentScroll = track.scrollLeft;
+      const remaining = maxScrollLeft - currentScroll;
+
+      if (remaining <= 0) return;
+
       track.scrollBy({
-        left: 280, 
-        behavior: "smooth",
+        left: Math.min(scrollAmount, remaining),
+        behavior: 'smooth'
       });
     });
+
+    // === Funkce pro aktualizaci stavu šipky
+    function updateArrowState() {
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      const atEnd = track.scrollLeft >= maxScroll - 1;
+
+      if (atEnd) {
+        arrow.style.opacity = '0.3';
+        arrow.style.pointerEvents = 'none';
+      } else {
+        arrow.style.opacity = '1';
+        arrow.style.pointerEvents = 'auto';
+      }
+    }
+
+    track.addEventListener('scroll', updateArrowState);
+    window.addEventListener('load', updateArrowState);
   });
 
-  function updateScrollbar() {
-  const scrollLeft = track.scrollLeft;
-  const scrollWidth = track.scrollWidth - track.clientWidth;
-  const progress = (scrollLeft / scrollWidth) * 100;
-  thumb.style.width = `${progress}%`;
-
-  if (scrollLeft >= scrollWidth - 1) {
-    arrow.disabled = true;
-    arrow.style.opacity = 0.3;
-    arrow.style.cursor = "default";
-  } else {
-    arrow.disabled = false;
-    arrow.style.opacity = 1;
-    arrow.style.cursor = "pointer";
-  }
-}
-
-arrowRight.addEventListener("click", () => {
-  const maxScroll = track.scrollWidth - track.clientWidth;
-  const scrollAmount = 300;
-  const current = track.scrollLeft;
-  const next = Math.min(current + scrollAmount, maxScroll);
-
-  track.scrollTo({
-    left: next,
-    behavior: "smooth"
-  });
-});
