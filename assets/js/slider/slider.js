@@ -26,3 +26,15 @@
     arrow.style.cursor = "pointer";
   }
 }
+
+arrowRight.addEventListener("click", () => {
+  const maxScroll = track.scrollWidth - track.clientWidth;
+  const scrollAmount = 300;
+  const current = track.scrollLeft;
+  const next = Math.min(current + scrollAmount, maxScroll);
+
+  track.scrollTo({
+    left: next,
+    behavior: "smooth"
+  });
+});
