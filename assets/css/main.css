@@ -900,6 +900,7 @@ object-fit: contain;
   letter-spacing: 0.04em;
   color: #000;
   flex: 1;
+  margin: 50px 0px;
 }
 .contact-info {
   justify-content: center;
