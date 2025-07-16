@@ -1,7 +1,7 @@
   document.addEventListener("DOMContentLoaded", function () {
     const track = document.querySelector('.slider-track');
     const arrow = document.querySelector('.slider-arrow');
-    const scrollAmount = 300;
+    const scrollAmount = 270;
 
     // === Funkce pro kliknutí na šipku
     arrow.addEventListener('click', () => {
