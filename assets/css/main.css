@@ -225,6 +225,7 @@ nav {
   padding: 30px;
   width: 100%;
   max-width: 1280px;
+  height: 150px;
 }
 
 .nav-link {
@@ -242,6 +243,7 @@ nav .branding img {
 }
 .nav-item-container .nav-item {
   display: inline;
+  letter-spacing: 0.05em;
 }
 .nav-item-container .nav-link {
   color: unset;
@@ -446,13 +448,10 @@ nav {
   }
 }
 
-
-
-
 /* ZKUŠENOSTI */
 
 .zkusenosti-div {
-  padding: 50px 20px;
+  padding: 90px 20px 20px 20px;
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
@@ -513,6 +512,7 @@ nav {
   font-weight: 600;
   color: var(--color-primary);
   margin-bottom: 10px;
+  letter-spacing: 0.02em;
 }
 
 .grid-item-content p {
@@ -524,6 +524,7 @@ nav {
   max-width: 425px;
   display: inline-block;
   margin: 0 0 0 10px;
+  letter-spacing: 0.04em;
 }
 
 @media (max-width: 768px) {
@@ -607,6 +608,14 @@ nav {
   background-color: #3d3d3d;
 }
 
+.gallery-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 40px 20px;
+}
+
 @media (max-width: 1024px) {
   .gallery {
     grid-template-columns: repeat(2, 1fr);
@@ -634,16 +643,14 @@ nav {
 
   .gallery-button {
     margin: 30px auto;
-    width: 280px;
+    width: 330px;
     font-size: 16px;
   }
+
+  .gallery-wrapper {
+  margin: 5px auto;
+  padding: 5px 20px 0px 20px;
 }
-.gallery-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 1200px;
-  margin: 30px auto;
-  padding: 0 20px;
 }
 
 .square2 {
@@ -653,7 +660,7 @@ nav {
   background-color: #fff;
   border: 2px solid var(--color-secondary);
   right: 0px;
-  top: -28px;
+  top: 51px;
   z-index: -1;
   pointer-events: none;
 }
@@ -664,6 +671,17 @@ nav {
   }
 }
 
+.gallery-wrapper,
+.gallery-container {
+  margin-top: 40px; 
+}
+
+@media (max-width: 1024px) {
+  .gallery-wrapper,
+  .gallery-container {
+    margin-top: 30px;
+  }
+}
 
 /* SLIDER */
 
@@ -807,6 +825,19 @@ object-fit: contain;
   }
 }
 
+@media (max-width: 1280px) {
+  .slider-container .line-header {
+    padding: 0px 0px 0px 50px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .slider-container .line-header {
+    padding: 0px;
+  }
+}
+
 /* LOGO SLIDER */
 .logo-slider-container {
   width: 100%;
@@ -814,8 +845,6 @@ object-fit: contain;
   overflow: hidden;
   margin: 100px auto;
   padding: 10px 0px;
-  
- 
 }
 
 .logo-slider-container h2 {
@@ -872,6 +901,19 @@ object-fit: contain;
   }
 }
 
+@media (max-width: 1280px) {
+  .logo-slider-container .line-header {
+    padding: 0px 0px 0px 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-slider-container .line-header {
+    padding: 0px;
+  }
+}
+
+
 @media (max-width: 768px) {
   .logo-slider img {
     max-height: 70px;
@@ -925,9 +967,10 @@ object-fit: contain;
   width: 370px;
 }
 .contact-content h2 {
-  font-size: 30px;
+  font-size: 40px;
   color: rgb(61, 61, 61);
   font-family: "Raleway", sans-serif;
+  font-weight: 600;
 }
 .contact-map {
   width: 100%;
@@ -940,7 +983,7 @@ object-fit: contain;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 32px;
-  margin: 0 0 10px 0;
+  margin: 0 0 30px 0;
   background: none;
   max-width: 500px;
   margin-left: 0;
@@ -997,6 +1040,13 @@ object-fit: contain;
  padding-bottom: 10px ;
 }
 
+.from-to {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+
 @media screen and (max-width: 980px) {
   .contact {
     flex-direction: column;
@@ -1017,6 +1067,12 @@ object-fit: contain;
     margin: 0 auto;
     padding: 0 8px;
     box-sizing: border-box;
+  }
+}
+
+@media (max-width: 1280px) {
+  .contact-content {
+    padding: 0px 0px 0px 50px;
   }
 }
 
@@ -1061,6 +1117,7 @@ object-fit: contain;
   }
 }
 
+
 .col img {
   width: 24px;
   height: 24px;
@@ -1095,35 +1152,46 @@ footer h3 {
     width: 100vw;
   }
 }
+
 /*gallery.hmtl*/
 .gallery {
   top: 0;
   z-index: 999;
 }
+
 .gallery-main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
-  min-height: 85vh;
-  background-color: var(--background-primary);
-  margin-bottom: -35%;
 }
 
-.galery-background{
+.gallery-background-left{
   position: absolute;
   left: 0;
   top: 0;
   display: flex;
   background-image: url("/assets/img/header-background.webp");
   background-size: cover;
-  height: 100%;
+  height: 85%;
   width: 65vw;
-  z-index: 0;
+  z-index: -10;
 }
 
-@media (max-width: 768px) {
-  .gallery-main {
-    margin-bottom: -155%;
-  }
+.gallery-background-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  background-color: var(--background-primary);
+  width: 100vw;
+  height: 85%;
+  z-index: -20;
 }
+
+
+
+
+
+
+
+
