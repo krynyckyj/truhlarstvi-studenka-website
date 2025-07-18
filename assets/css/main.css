@@ -1193,14 +1193,14 @@ footer h3 {
 @media (max-width: 768px) {
    .gallery-background-left {
     width: 100vw;
-    height: 55vh;
+    height: 45vh;
     bottom: 0;
     top: auto;
     background-position: bottom center;
   }
 
  .gallery-background-right {
-    min-height: 55vh;
+    min-height: 45vh;
     top: 0;
     min-width: 100vw;
   }
