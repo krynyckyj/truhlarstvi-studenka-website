@@ -1033,7 +1033,7 @@ object-fit: contain;
   align-items: flex-start;
 }
 .contact-map iframe {
-  min-height: 400px;
+  height: 100%;
   border: none;
   width: 100%;
 }
