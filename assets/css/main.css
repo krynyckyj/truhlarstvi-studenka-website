@@ -601,7 +601,7 @@ nav {
   justify-content: center;
   align-items: center;
   margin: 50px auto;
-  margin-bottom: 80px;
+  margin-bottom: 140px;
   line-height: 20px;
   letter-spacing: 0.05em;
   transition: background-color 0.2s;
@@ -647,7 +647,7 @@ nav {
 
   .gallery-button {
     margin: 40px auto;
-    margin-bottom: 80px;
+    margin-bottom: 140px;
     width: 330px;
     font-size: 16px;
   }
