@@ -179,14 +179,17 @@ h2::after {
     margin-top: 20px;
     display: flex;
     justify-content: center;
-    max-width: 100%;
-    height: auto;
+    width: 380px;      
+    max-width: 90vw;  
+    height: 222px;     
+    object-fit: cover; 
   }
 
   .front-text {
     order: 1;
     width: 100%;
     text-align: center;
+    margin: 22px 115px;
   }
 
   .front-text h1 {
