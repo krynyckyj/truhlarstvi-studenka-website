@@ -846,13 +846,13 @@ object-fit: contain;
   }
 }
 
-/* LOGO SLIDER */
+/* LOGO SHOWCASE */
 .logo-slider-container {
   width: 100%;
-  max-width: 1300px;
   overflow: hidden;
+  max-width: 1300px;
   margin: 100px auto;
-  padding: 10px 0px;
+  padding: 10px 0;
 }
 
 .logo-slider-container h2 {
@@ -866,23 +866,15 @@ object-fit: contain;
   margin-bottom: 50px;
 }
 
-.logo-slider-effect {
-  -webkit-mask: linear-gradient(
-    90deg,
-    transparent,
-    white 20%,
-    white 80%,
-    transparent
-  );
-  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
-}
-
 .logo-slider {
   display: flex;
-  width: max-content;
-  animation: slide-logos 30s linear infinite;
-  gap: 30px;
+  overflow-x: hidden; 
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #aaa transparent;
+  width: 100%;
 }
+
 
 .logo-slider img {
   height: auto;
@@ -892,7 +884,7 @@ object-fit: contain;
 
 .logo-slider-container p {
   text-align: end;
-  margin: 30px 0px;
+  margin: 30px 70px;
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
   font-weight: 300;
@@ -900,42 +892,28 @@ object-fit: contain;
   color: var(--color-primary);
 }
 
-@keyframes slide-logos {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
 @media (max-width: 1280px) {
   .logo-slider-container .line-header {
-    padding: 0px 0px 0px 50px;
+    padding: 0 0 0 50px;
   }
 }
 
 @media (max-width: 768px) {
   .logo-slider-container .line-header {
-    padding: 0px;
+    padding: 0;
   }
 }
-
 
 @media (max-width: 768px) {
   .logo-slider img {
     max-height: 70px;
   }
 
-  .logo-slider {
-    animation-duration: 25s;
-  }
-
   .logo-slider-container h2 {
     font-size: 30px;
-    line-height: 35px; 
+    line-height: 35px;
     margin-left: 20px;
-    text-align: left; 
+    text-align: left;
     margin-bottom: 50px;
   }
 
@@ -944,10 +922,22 @@ object-fit: contain;
   }
 
   .logo-slider-container {
-  padding: 0px;
+    padding: 0;
+  }
+
+  .logo-slider {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 20px;
   }
 }
 
+@media (min-width: 768px) {
+  .logo-slider img:not(:first-child) {
+    display: none;
+  }
+}
 /*FOOTER*/
 
 .contact-container {
@@ -960,6 +950,7 @@ object-fit: contain;
   display: flex;
   flex-wrap: wrap;
 }
+
 .contact-content {
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
@@ -969,6 +960,7 @@ object-fit: contain;
   flex: 1;
   margin: 50px 0px;
 }
+
 .contact-info {
   justify-content: center;
   align-items: center;
