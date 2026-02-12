@@ -22,4 +22,4 @@ jobs:
           localDir: '.'  
           remoteDir: '/' 
           dryRun: false
-          exclude: '.git*,.github*,node_modules'
+          exclude: 'node_modules/**/*,.git*,.github*'
